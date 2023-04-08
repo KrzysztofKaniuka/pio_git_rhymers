@@ -13,17 +13,17 @@ class RhymersDemo {
         defaultCountingOutRhymer[] rhymers = { factory.GetStandardRhymer(), factory.GetFalseRhymer(),
                 factory.GetFIFORhymer(), factory.GetHanoiRhymer()};
         
-        for (int i = 1; i < 15; i++)
-            for (int j = 0; j < 3; j++)
-                rhymers[j].countIn(i);
+        for (int externalIterator = 1; externalIterator < 15; externalIterator++)
+            for (int internalIterator = 0; internalIterator < 3; internalIterator++)
+                rhymers[internalIterator].countIn(externalIterator);
         
         java.util.Random rn = new java.util.Random();
-        for (int i = 1; i < 15; i++)
+        for (int iterator = 1; iterator < 15; iterator++)
             rhymers[3].countIn(rn.nextInt(20));
         
-        for (int i = 0; i < rhymers.length; i++) {
-            while (!rhymers[i].callCheck())
-                System.out.print(rhymers[i].countOut() + "  ");
+        for (int iterator = 0; iterator < rhymers.length; iterator++) {
+            while (!rhymers[iterator].callCheck())
+                System.out.print(rhymers[iterator].countOut() + "  ");
             System.out.println();
         }
         
